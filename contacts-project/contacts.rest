@@ -1,0 +1,12 @@
+### Home
+GET http://localhost:3000/
+
+###
+
+### Get all contacts
+GET http://localhost:3000/contacts
+
+###
+
+### Get one contact
+GET http://localhost:3000/contacts/6a5551580b539065e39ce26e
