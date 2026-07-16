@@ -3,6 +3,8 @@ require("dotenv").config();
 console.log("Loaded URI:", process.env.MONGODB_URI);
 
 const express = require("express");
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("./swagger.json");
 const { initDb } = require("./contacts-project/data/database");
 
 console.log("Mongo URI:", process.env.MONGODB_URI);
@@ -14,8 +16,13 @@ app.use(express.json());
 
 initDb()
   .then(() => {
+    // Swagger Documentation
+    app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+    // Routes
     app.use("/", require("./contacts-project/routes"));
 
+    // Start Server
     app.listen(port, () => {
       console.log(`Server running at http://localhost:${port}`);
     });
