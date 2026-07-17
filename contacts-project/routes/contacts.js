@@ -15,10 +15,7 @@ router.post("/", contactsController.createContact);
 // PUT - Update a contact
 router.put("/:id", contactsController.updateContact);
 
-// TEMPORARY DELETE TEST
-router.delete("/:id", (req, res) => {
-  console.log("✅ DELETE route reached");
-  res.send("DELETE route reached!");
-});
+// DELETE - Delete a contact
+router.delete("/:id", contactsController.deleteContact);
 
 module.exports = router;

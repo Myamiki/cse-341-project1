@@ -88,16 +88,16 @@ const updateContact = async (req, res) => {
 
     const db = getDb();
 
-    const response = await db.collection("contacts").replaceOne(
+    const response = await db.collection("replaceOne")(
       { _id: contactId },
       updatedContact
     );
 
-    if (response.modifiedCount > 0) {
+    if (response.matchedCount > 0) {
       res.status(204).send();
     } else {
       res.status(404).json({
-        message: "Contact not found or no changes were made."
+        message: "Contact not found."
       });
     }
   } catch (err) {
