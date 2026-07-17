@@ -3,10 +3,9 @@ const swaggerAutogen = require("swagger-autogen")();
 const doc = {
   info: {
     title: "Contacts API",
-    description: "API for managing contacts"
-  },
-  host: "localhost:3000",
-  schemes: ["http"]
+    description: "API for managing contacts",
+    version: "1.0.0"
+  }
 };
 
 const outputFile = "./swagger.json";

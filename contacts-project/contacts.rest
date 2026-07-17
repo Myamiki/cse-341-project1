@@ -13,7 +13,7 @@ GET http://localhost:3000/contacts/6a5551580b539065e39ce26e
 
 ###
 
-### Create a new contact
+### Create Contact 4 - Sarah Johnson
 POST http://localhost:3000/contacts
 Content-Type: application/json
 
@@ -27,8 +27,22 @@ Content-Type: application/json
 
 ###
 
-### Update Sarah's contact
-PUT http://localhost:3000/contacts/6a58a7f293e018a185f5056d
+### Create Contact 5 - David Williams
+POST http://localhost:3000/contacts
+Content-Type: application/json
+
+{
+  "firstName": "David",
+  "lastName": "Williams",
+  "email": "david@gmail.com",
+  "favoriteColor": "Red",
+  "birthday": "1997-11-08"
+}
+
+###
+
+### Update Sarah's Contact
+PUT http://localhost:3000/contacts/6a594912a4113558328ea8b6
 Content-Type: application/json
 
 {
@@ -41,5 +55,5 @@ Content-Type: application/json
 
 ###
 
-### Delete a contact
-DELETE http://localhost:3000/contacts/6a58a7f293e018a185f5056d
+### Delete Sarah's Contact
+DELETE http://localhost:3000/contacts/6a594912a4113558328ea8b6
