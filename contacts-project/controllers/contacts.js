@@ -88,7 +88,7 @@ const updateContact = async (req, res) => {
 
     const db = getDb();
 
-    const response = await db.collection("replaceOne")(
+    const response = await db.collection("contacts").replaceOne(
       { _id: contactId },
       updatedContact
     );
@@ -107,7 +107,6 @@ const updateContact = async (req, res) => {
     });
   }
 };
-
 // DELETE - Delete contact
 const deleteContact = async (req, res) => {
   try {
